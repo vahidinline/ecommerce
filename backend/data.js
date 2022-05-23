@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      name: 'Watch',
+      name: 'Watch 7',
       slug: 'watch-7',
       category: 'accessories',
       image: '/images/p1.jpg',
@@ -13,7 +13,7 @@ const data = {
       description: 'Apple watch 7 nike',
     },
     {
-      name: 'Watch',
+      name: 'Watch 7 Nike',
       slug: 'watch-7-nike',
       category: 'accessories',
       image: '/images/p1.jpg',
@@ -25,19 +25,19 @@ const data = {
       description: 'Apple watch 7',
     },
     {
-      name: 'Watch',
+      name: 'Watch 6',
       slug: 'watch-6',
       category: 'accessories',
       image: '/images/p1.jpg',
       price: 120,
-      countInStock: 10,
+      countInStock: 0,
       brand: 'Apple',
       rating: 5,
       numReviews: 10,
       description: 'Apple watch 6 nike',
     },
     {
-      name: 'Watch',
+      name: 'Watch SE',
       slug: 'watch-se',
       category: 'accessories',
       image: '/images/p3.jpg',
