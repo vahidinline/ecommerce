@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Watch 7',
       slug: 'watch-7',
       category: 'accessories',
@@ -13,6 +14,7 @@ const data = {
       description: 'Apple watch 7 nike',
     },
     {
+      _id: '2',
       name: 'Watch 7 Nike',
       slug: 'watch-7-nike',
       category: 'accessories',
@@ -25,6 +27,7 @@ const data = {
       description: 'Apple watch 7',
     },
     {
+      _id: '3',
       name: 'Watch 6',
       slug: 'watch-6',
       category: 'accessories',
@@ -37,6 +40,7 @@ const data = {
       description: 'Apple watch 6 nike',
     },
     {
+      _id: '4',
       name: 'Watch SE',
       slug: 'watch-se',
       category: 'accessories',
