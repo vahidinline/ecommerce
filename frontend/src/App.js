@@ -2,14 +2,19 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Nav, Badge, Navbar, Container } from 'react-bootstrap';
+import { Nav, Badge, Navbar, Container, NavDropdown } from 'react-bootstrap';
 import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
-  const { state } = useContext(Store);
-  const { cart } = state;
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+  const signoutHandler = () => {
+    ctxDispatch({ type: 'USER_SIGNOUT' });
+    localStorage.removeItem('userInfo');
+  };
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -29,6 +34,27 @@ function App() {
                       </Badge>
                     )}
                   </Link>
+                  {userInfo ? (
+                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                      <LinkContainer>
+                        <NavDropdown.Item to="/profile">
+                          User Profile
+                        </NavDropdown.Item>
+                        <NavDropdown.Item to="/order-history">
+                          Order history
+                        </NavDropdown.Item>
+                      </LinkContainer>
+                      <NavDropdown.Divider />
+                      <Link
+                        className="dropdown-item"
+                        to="signout"
+                        onClick={signoutHandler}>
+                        Sign Out
+                      </Link>
+                    </NavDropdown>
+                  ) : (
+                    <Link className="nav-link" to="/signin"></Link>
+                  )}
                 </Nav>
               </Navbar.Brand>
             </Container>
@@ -38,6 +64,7 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
             </Routes>

@@ -8,7 +8,7 @@ const data = {
       price: 120,
       countInStock: 10,
       brand: 'Apple',
-      rating: 4.5,
+      rating: 4.6,
       numReviews: 10,
       description: 'Apple watch 7 nike',
     },

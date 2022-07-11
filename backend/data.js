@@ -1,7 +1,23 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'vahid',
+      email: 'admin@fitlinez.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Azar',
+      email: 'azar@fitlinez.com',
+      password: bcrypt.hashSync('123486'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
+      //_id: '1',
       name: 'Watch 7',
       slug: 'watch-7',
       category: 'accessories',
@@ -14,7 +30,7 @@ const data = {
       description: 'Apple watch 7 nike',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Watch 7 Nike',
       slug: 'watch-7-nike',
       category: 'accessories',
@@ -27,7 +43,7 @@ const data = {
       description: 'Apple watch 7',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Watch 6',
       slug: 'watch-6',
       category: 'accessories',
@@ -40,7 +56,7 @@ const data = {
       description: 'Apple watch 6 nike',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Watch SE',
       slug: 'watch-se',
       category: 'accessories',
